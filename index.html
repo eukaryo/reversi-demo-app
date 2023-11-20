@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>リバーシゲーム</title>
+    <style>
+        .board {
+            display: grid;
+            grid-template-columns: repeat(8, 50px);
+            grid-template-rows: repeat(8, 50px);
+        }
+        .cell {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: green; /* 空白のマスの背景色を緑色に設定 */
+        }
+        .cell.black {
+            background-color: black;
+        }
+        .cell.white {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameBoard" class="board"></div>
+    <button id="resetButton">ゲームリセット</button>
+    <button id="undoButton">手を戻す</button>
+    <button id="randomMoveButton">ランダムな手</button>
+    <button id="agentMoveButton">AIに手を指させる</button>
+    <p>ゲーム記録: <span id="gameRecord"></span></p>
+    <p>現在の手番: <span id="currentTurn"></span></p>
+    <p>空白マスの数: <span id="emptyCellsCount"></span></p>
+    <p>AI操作状態: <span id="agentStatus"></span></p>
+    <textarea id="errorMessage" readonly rows="3" cols="50"></textarea>
+    <script src="script.js"></script>
+</body>
+</html>
